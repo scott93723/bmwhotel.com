@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="tw">
+<head>
+    <meta charset="UTF-8">
+    <title>吉富春房貸計算器</title>
+    <p><h1>吉富春房貸計算器<h1></p>
+    <style type="text/css">
+        blockquote, body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, input, li, ol, p, pre, td, textarea, th, ul {
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+        }
+        body {
+            line-height: 24px;
+            margin: 10px 0;
+            font: 14px Helvetica Neue,Helvetica,PingFang SC,微软雅黑,Tahoma,Arial,sans-serif;
+            display: block;
+        }
+        .mainContainer{
+            margin: 10px 0;
+            text-align: center !important;
+            width: 80%;
+            border:0;
+        }
+        .controlForm label{
+            display: inline-grid;
+        }
+        .controlForm  div.row{
+            display: inline-list-item;
+            margin-top:10px;
+        }
+        .controlForm  input[type=number]{
+            width: 70px;
+        }
+        .controlForm  input[type="radio"]{
+            margin-right: .5em;
+            border-radius: 50%;
+            text-indent: .15em;
+        }
+        .result table{
+            position: center;
+            margin: 20px auto auto auto;
+            width:50%;
+            text-align: center;
+        }
+        .result table th,td{
+            width: 1%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="mainContainer">
+    <div class="controlForm">
+        <div class="row"><label>房貸總額(元)：</label><input type="number" min="10000" step="1000" value="150000" name="p"></div>
+        <div class="row"><label>貸款期数(月)：</label><input type="number" min="60" max="360" step="1" value="20" name="m"></div>
+        <div class="row" ><label>年利率 (%)：</label><input type="number" min="3.00" max="10.00" step="0.01" value="4.90" name="ir"></div>
+        <div class="row">還款方法 ：
+         <!--   <label>等额本金</label><input type="radio" checked="checked" name="pm" value="1">-->
+            <label>本利攤</label><input type="radio"  name="pm" value="2"></div>
+
+        <div class="row"><button type="submit" id="btnHL">開始計算</button> </div>
+    </div>
+    <div class="result"></div>
+</div>
+   <script type="text/javascript" charset="UTF-8">
+       var HouseLoan= function(principal,annualInterestRate,nLoanPeriod){
+           this.p=principal;
+           this.aIR=annualInterestRate;
+           this.nlp=nLoanPeriod;
+           this.houseLoan= function(repaymentMethod){
+               //注意，toFixed返回一个字符串
+               var ff=function(num){
+                   var ret;
+                   try{
+                       if(typeof num==="string"){
+                           ret= Number(num);
+                       }
+                       if(typeof  num==="number"){
+                           if(num<0.01){
+                               ret=parseFloat(num.toFixed(8));
+                           }else{
+                               ret= parseFloat(parseFloat(num.toPrecision(12)).toFixed(2));
+                           }
+
+                       }
+
+                   }catch (e){
+                       console.error(typeof num);
+                       console.log(e.message);
+                   }
+                   return ret;
+               };
+               var pItem=ff(this.p/this.nlp),iRateItem=ff(this.aIR/12),rItem=0,tArr=[];
+               // console.log(pItem,iRateItem);
+               switch(repaymentMethod){
+                   case HouseLoan.loanType.ConstantAmortizationMortgage:
+                       //等额本金法
+                       for(var i=0;i<this.nlp;i++){
+                           var restPa=ff(this.p-i*pItem) ,aItem=[];
+                           rItem=ff(pItem+restPa*iRateItem);
+                           aItem.push(i+1);
+                           aItem.push(rItem.toFixed(2));
+                           aItem.push(ff(rItem-pItem).toFixed(2));
+                           aItem.push(ff(this.p-(i+1)*pItem).toFixed(2));
+                           if(aItem[aItem.length-1]<0){
+                               //如果最后一位小于的话，就直接算还上一期剩下的本金。
+                               aItem[1]=restPa.toFixed(2);
+                               aItem[3]=0.00.toFixed(2);
+                           }
+                          // console.info(aItem);
+                           tArr.push(aItem);
+                       }
+                       break;
+                   case HouseLoan.loanType.ConstantPaymentMortgage:
+                       //等额本息法
+                       for(var j=0;j<this.nlp;j++){
+                           var restPb=ff(this.p-j*pItem),bItem=[],temp=(Math.pow((1+iRateItem),this.nlp));
+                           rItem=ff((this.p*iRateItem*temp)/(temp-1));
+                           bItem.push(j+1);
+                           bItem.push(rItem.toFixed(2));
+                           bItem.push(ff(rItem-pItem).toFixed(2));
+                           bItem.push(ff(this.p-(j+1)*pItem).toFixed(2));
+                           if(bItem[bItem.length-1]<0){
+                               bItem[1]=restPb.toFixed(2);
+                               bItem[3]=0.00.toFixed(2);
+                           }
+                          // console.info(bItem);
+                           tArr.push(bItem);
+                       }
+                       break;
+
+               }
+               return tArr;
+           };
+           this.drawTable= function(arr,firstAsHeader){
+               var ret="<table>",noData="<tbody><tr><td>No Data</td></tr></tbody>";
+               if(arr.length<1){
+                   ret+=noData+"</table>";
+               }else{
+                   if(arr.length===1){
+                       if(!! firstAsHeader){
+                           var t1= arr[0].map(function(value,index){
+                               return "<th>"+value+"</th>";
+                           }).join("");
+                           ret+="<thead><tr>"+t1+"</tr></thead>"+noData+"</table>";
+                       }else{
+                           ret+="<tbody><tr>"+t1+"</tr></tbody>"+noData+"</table>";
+                       }
+                   }else{
+                       var ths="",tbs="<tbody>",trs="<tr>";
+                       if(!! firstAsHeader){
+                           var t2= arr[0].map(function(value,index){
+                               return "<th>"+value+"</th>";
+                           }).join("");
+                           ths+="<thead><tr>"+t2+"</tr></thead>";
+                           for(var i=1;i<arr.length;i++){
+                               trs+= arr[i].map(function(value,index){
+                                   return "<td>"+value+"</td>";
+                               }).join("")+"</tr>";
+                           }
+                           ret+=ths+tbs+trs+"</tbody></table>";
+                       }else{
+                           for(var i=0;i<arr.length;i++){
+                               trs+= arr[i].map(function(value,index){
+                                   return "<td>"+value+"</td>";
+                               }).join("")+"</tr>";
+                           }
+                           ret+=ths+tbs+trs+"</tbody></table>";
+                       }
+                   }
+               }
+               return ret;
+           };
+           this.returnLoanTable= function(method){
+               var h=["期数","本期還款","利息","剩餘本金"],b=this.houseLoan(method),arr=[];
+               for(var j=0;j<b.length+1;j++){
+                   if(j===0){
+                       arr.push(h);
+                   }else{
+                       arr.push(b[j-1]);
+                   }
+               }
+               return this.drawTable(arr,true);
+           }
+       };
+       HouseLoan.loanType={"ConstantAmortizationMortgage":1,"ConstantPaymentMortgage":2};
+      var btnCalc= document.getElementById("btnHL");
+      btnCalc.onclick=function(){
+          var p= document.querySelector("input[name=p]").value,
+              m=document.querySelector("input[name=m]").value,
+              ir=document.querySelector("input[name=ir]").value,
+              pm=document.querySelector("input[name=pm]:checked").value,
+              elResult= document.querySelector("div.result");
+             p= parseInt(p,10);
+             m=parseInt(m);
+             ir= parseFloat((ir/100).toFixed(6));
+             pm=parseInt(pm);
+            // console.log(p,m,ir,pm);
+          var hl= new HouseLoan(p,ir,m);
+          elResult.innerHTML=hl.returnLoanTable(pm);
+      };
+
+   </script>
+</body>
+</html>
