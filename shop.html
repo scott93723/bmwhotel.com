@@ -1,256 +1,251 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>M禮品店</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">    
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-  </head>
-  <body>
-    <div class="container"> 
-      <!-- 導覽列 -->
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-      <!-- 導覽列的頁首 -->
-          <div class="navbar-header">
-        <a class="navbar-brand" href="index.html"><font color="#0066FF">日月潭</font>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M禮品店｜日月潭香林田莊</title>
+  <meta name="description" content="日月潭香林田莊 M禮品店，提供現磨精品咖啡、日月潭魚池現泡紅茶與在地特產伴手禮。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #08090d;
+      --panel: rgba(255,255,255,0.05);
+      --line: rgba(255,255,255,0.1);
+      --text: #f4f7fb;
+      --muted: #9ca6b5;
+      --m-blue: #58c4ff;
+      --m-navy: #2753ff;
+      --m-red: #ff375f;
+      --shadow: 0 24px 70px rgba(0,0,0,0.36);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --container: 1220px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter","Noto Sans TC",sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right,rgba(88,196,255,0.08),transparent 24%),
+        radial-gradient(circle at 15% 20%,rgba(255,55,95,0.08),transparent 20%),
+        linear-gradient(180deg,#05060a 0%,#090b12 45%,#0d1118 100%);
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
+    .container { width: min(calc(100% - 32px),var(--container)); margin: 0 auto; }
 
-<font color="#8A2BE2">民宿</font> 
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(7,9,14,0.72);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 14px; }
+    .brand-badge {
+      width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center;
+      background: linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.12); position: relative; overflow: hidden;
+    }
+    .brand-badge::before {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(90deg,var(--m-blue) 0 33%,var(--m-navy) 33% 66%,var(--m-red) 66% 100%);
+      opacity: .25; transform: skewX(-18deg) scale(1.5);
+    }
+    .brand-mark { position: relative; z-index: 1; font-weight: 900; font-size: 1.2rem; }
+    .brand-title { font-size: 1rem; font-weight: 700; letter-spacing: .05em; }
+    .brand-sub { color: var(--muted); font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; margin-top: 3px; }
+    .nav-links { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; color: var(--muted); font-size: .94rem; justify-content: flex-end; }
+    .nav-links a:hover { color: var(--text); }
+    .dropdown-wrap { display: inline-flex; align-items: center; position: relative; cursor: pointer; }
+    .dropdown-menu-custom {
+      display: none; position: absolute; top: 100%; left: 0; margin-top: 10px; min-width: 160px;
+      background: rgba(12,14,22,0.95); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px; padding: 8px 0; box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+      backdrop-filter: blur(14px); z-index: 200;
+    }
+    .dropdown-wrap.open .dropdown-menu-custom { display: flex; flex-direction: column; }
+    .dropdown-menu-custom a { padding: 10px 18px; font-size: .92rem; color: var(--muted); transition: color .2s,background .2s; }
+    .dropdown-menu-custom a:hover { color: #fff; background: rgba(255,255,255,0.06); }
 
-<font color="#FF0000">香林田莊</font>
-</a>
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-              <span class="sr-only">導覽按鈕</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>            
-          </div>
-      
-      <!-- 導覽列的項目 -->
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 14px 24px; border-radius: 999px; font-size: .95rem; font-weight: 600;
+      border: 1px solid transparent; transition: transform .25s ease,box-shadow .25s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(90deg,rgba(88,196,255,0.15),rgba(39,83,255,0.18),rgba(255,55,95,0.18));
+      border-color: rgba(255,255,255,0.14); box-shadow: 0 16px 40px rgba(0,0,0,0.3); color: #fff;
+    }
+    .btn-secondary { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.12); color: #fff; }
 
-              <li ><a href="index.html">首頁</a></li>
-             
-            <li><a href="about_us.html"> 關於我們</a></li>
-              <li><a href="news.html">
-               最新消息
-             </a></li>
-            <li><a href="house.html">
-               房型介紹
-             </a></li>          
-              <li><a href="mpower.html">
-               咖啡館
-             </a></li>
-                <li><a href="share.html">
-               民宿景點
-             </a></li>
-              <li><a href="nature.html">
-               賞螢火蟲
-             </a></li>
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 12px; margin-bottom: 18px;
+      font-size: .78rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: #d8e4ef;
+    }
+    .eyebrow::before {
+      content: ""; width: 42px; height: 4px; border-radius: 999px;
+      background: linear-gradient(90deg,var(--m-blue),var(--m-navy),var(--m-red));
+    }
 
-             <li class="active"><a href="shop.html">
-<font color="#FF0000">
-             M禮品店
-</font>
-           </a></li>
-               
-               
-             
-              
-              <li><a href="https://play.google.com/store/apps/details?id=com.god.hotelbmwm3">
-             日月潭香林田莊 Android App下載</a></li>
-               <li><a href="https://play.google.com/store/apps/details?id=com.god.superworldbnb">
-             背包客全球民宿 Android App下載</a></li>   
+    .hero { padding: 36px 0 28px; }
+    .hero-box {
+      min-height: 460px; border-radius: var(--radius-xl); overflow: hidden; position: relative;
+      box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,0.08);
+      background: linear-gradient(180deg,rgba(5,7,12,0.45),rgba(5,7,12,0.88)),url('images/shop2.jpg') center/cover;
+      padding: 52px; display: flex; flex-direction: column; justify-content: flex-end;
+    }
+    .hero-box h1 { margin: 0; font-size: clamp(2.8rem,6vw,5.4rem); line-height: .94; letter-spacing: -.05em; text-transform: uppercase; }
+    .hero-box p { max-width: 42rem; margin: 18px 0 0; color: #d0d7e2; font-size: 1.02rem; }
 
+    .section { padding: 28px 0; }
+    .section-head { margin-bottom: 22px; }
+    .section-head h2 { margin: 0; font-size: clamp(2rem,4vw,3.2rem); line-height: 1.02; letter-spacing: -.04em; text-transform: uppercase; }
+    .section-head p { margin: 10px 0 0; max-width: 44rem; color: var(--muted); }
 
-        <li><a href="https://www.facebook.com/%E6%97%A5%E6%9C%88%E6%BD%AD%E9%A6%99%E6%9E%97%E7%94%B0%E8%8E%8A-2072650812978160/">
-        FB訂房</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">遊憩地圖<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="https://www.sunmoonlake.gov.tw/index.aspx#1">日月潭</a></li>
-                  <li><a href="http://www.nine.com.tw/">九族文化村</a></li>                  
-                  <li role="separator" class="divider"></li> 
-                  <li><a href="https://kumar.tw/b/">南投妖怪村</a></li>
-          <li><a href="https://www.cingjing.gov.tw/">清境農場</a></li>
-                </ul>
-              </li>
-            </ul>          
-          </div>
+    .panel {
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08); box-shadow: var(--shadow); overflow: hidden;
+    }
+    .panel-body { padding: 32px; }
+    .panel-body p { color: #ccd5df; }
+
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 18px;
+    }
+    .gallery-grid .panel img {
+      aspect-ratio: 4/3; object-fit: cover;
+    }
+
+    .feature-list {
+      list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 14px;
+    }
+    .feature-list li {
+      display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); color: #d2d8e2;
+    }
+    .feature-list li:last-child { border-bottom: 0; }
+    .feature-list li::before {
+      content: ""; width: 10px; height: 10px; margin-top: 8px; border-radius: 50%;
+      background: linear-gradient(90deg,var(--m-blue),var(--m-navy),var(--m-red));
+      flex: none; box-shadow: 0 0 14px rgba(88,196,255,0.35);
+    }
+
+    .site-footer { padding: 30px 0 32px; text-align: center; color: var(--muted); font-size: .94rem; }
+    .site-footer a { color: #fff; }
+
+    @media (max-width: 1080px) { .gallery-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 760px) {
+      .nav { flex-direction: column; align-items: flex-start; padding: 14px 0 18px; }
+      .nav-links { justify-content: flex-start; gap: 14px; }
+      .hero-box { padding: 28px; min-height: 380px; }
+      .gallery-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="brand-badge"><span class="brand-mark">M3</span></div>
+        <div>
+          <div class="brand-title">日月潭香林田莊</div>
+          <div class="brand-sub">BMW M3 Power Style Homestay</div>
         </div>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">首頁</a>
+        <a href="about_us.html">關於我們</a>
+        <a href="news.html">最新消息</a>
+        <a href="house.html">房型介紹</a>
+        <a href="mpower.html">咖啡館</a>
+        <a href="share.html">民宿景點</a>
+        <a href="nature.html">賞螢火蟲</a>
+        <a href="shop.html" style="color:var(--m-red);">M禮品店</a>
+        <a href="https://www.facebook.com/%E6%97%A5%E6%9C%88%E6%BD%AD%E9%A6%99%E6%9E%97%E7%94%B0%E8%8E%8A-2072650812978160/">FB訂房</a>
+        <span class="dropdown-wrap">
+          <a href="#" onclick="event.preventDefault();this.parentElement.classList.toggle('open');">遊憩地圖 ▾</a>
+          <span class="dropdown-menu-custom">
+            <a href="https://www.sunmoonlake.gov.tw/index.aspx#1">日月潭</a>
+            <a href="http://www.nine.com.tw/">九族文化村</a>
+            <a href="https://kumar.tw/b/">南投妖怪村</a>
+            <a href="https://www.cingjing.gov.tw/">清境農場</a>
+          </span>
+        </span>
+        <a class="btn btn-primary" href="tel:0905595617">立即訂房</a>
       </nav>
+    </div>
+  </header>
 
- <font color="#FF3333">    <p><h3>M禮品店<h3></p></font>
-      <!-- 輪播 -->
-      <div id="myCarousel" class="carousel slide">
-	    <!-- 輪播指示 -->
-	    <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-          <li data-target="#myCarousel" data-slide-to="3"></li>
-          <li data-target="#myCarousel" data-slide-to="4"></li>
-          <li data-target="#myCarousel" data-slide-to="5"></li>
-          <li data-target="#myCarousel" data-slide-to="6"></li>
-          <li data-target="#myCarousel" data-slide-to="7"></li>
-
-        </ol>
-		
-		<!-- 輪播內容 -->
-	    <div class="carousel-inner">
-		  <!-- 第一個輪播項目 (包含圖片、標題與介紹) --> 
-          <div class="item active">
-  		    <img src="images/mcoffe5.jpg">
-            <div class="carousel-caption">
-              <h2></h2>
-              <p class="lead"></p>
-            </div>
-          </div>
-		  
-		  <!-- 第二個輪播項目 (包含圖片、標題與介紹) --> 
-          <div class="item">
-            <img src="images/shop1.jpg">
-            <div class="carousel-caption">
-              <h2></h2>
-              <p class="lead"></p>
-            </div>
-          </div>
-		  
-          <!-- 第三個輪播項目 (包含圖片、標題與介紹) --> 
-		  <div class="item">
-            <img src="images/shop2.jpg">
-            <div class="carousel-caption">
-              <h2></h2>
-              <p class="lead"></p>
-            </div>
-          </div>
-    
-  <div class="item">
-            <img src="images/shop3.jpg">
-            <div class="carousel-caption">
-              <h2></h2>
-              <p class="lead"></p>
-            </div>
-          </div>
-    
-
-
-  <div class="item">
-            <img src="images/mcoffe1.jpg">
-            <div class="carousel-caption">
-              <h2></h2>
-              <p class="lead"></p>
-            </div>
-          </div>
-    
-
-      <div class="item">
-            <img src="images/mcoffe2.jpg">
-            <div class="carousel-caption">
-              <h2></h2>
-              <p class="lead"></p>
-            </div>
-          </div>
-    
-        <div class="item">
-            <img src="images/mcoffe3.jpg">
-            <div class="carousel-caption">
-              <h2></h2>
-              <p class="lead"></p>
-            </div>
-          </div>
-    
-        <div class="item">
-            <img src="images/mcoffe4.jpg">
-            <div class="carousel-caption">
-              <h2></h2>
-              <p class="lead"></p>
-            </div>
-          </div>
-        
-
-
-
-
-
-
-
-
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-box panel">
+          <div class="eyebrow">M Gift Shop</div>
+          <h1>M 禮品店</h1>
+          <p>現磨精品咖啡、日月潭魚池現泡紅茶，以及在地特產伴手禮。</p>
         </div>
-		
-		<!-- 輪播控制 -->
-        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left"></span></a>
-        <a class="carousel-control right" href="#myCarousel" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right"></span></a>
-      </div>      
-	  	
-
-	  
-      
-      <!-- 內容區 -->
-   <!-- 第一列 -->
-      <p>
-        <font color="#7700FF">
-        <h2>現磨精品咖啡 日月潭 魚池 現泡紅茶</h2>
-        </font>
-      </p>
-   	  <div>
-	    
-        <p>
-        <h1>  
-       <font color="#FF3333"> 
-精品現磨咖啡，在地烘培咖啡，不追求高價位，要求香醇美味，口感厚實。
-</font>
-       </h1>
-       </p>
-	      
-        <font color="#FF3333">    <p><h3>有日月潭頭社在地咖啡還有嚴選進口咖啡豆，春天窗前，綠葉盎然，秋天整排落羽松，秘境。<h3></p></font>
-          
-          </div>
-		  
-  
-      <!-- 頁尾 -->
-      <hr>
-      <footer>       
-  <font color="#0066FF"> 
-          <p>&copy;2018 
-  
-            
-  <font color="#0066FF">日月潭</font>
-  
-  <font color="#8A2BE2">民宿</font> 
-  
-  <font color="#FF0000">香林田莊</font>
-  
-  
-            &middot;
-            民宿電話：0492861855</p> 
-          </font>
-   <font color="#8A2BE2">   
-  
-       <p>     手機：0905-595-617 陳小姐</p>
-        <p>    手機：0910-232-380 陳先生：包場,車聚,露營</p>
-       </font>
-  
-   <font color="#FF0000"> 
-      
-        
-       
-       <a href="https://www.google.com/maps/place/%E9%A6%99%E6%9E%97%E7%94%B0%E8%8E%8A%E6%B0%91%E5%AE%BF/@23.8354373,120.8998759,18.16z/data=!4m5!3m4!1s0x0:0x8d3e4e169d31cfa7!8m2!3d23.8352299!4d120.8998589">
-        <p>   地址：台灣南投縣魚池鄉頭社村平和巷129之19號</p>
-      </a>   
-      <p> 經緯度：23.8354373,120.8998759</p>
-     </font>
-      <p class="text-right"><a href="#">回到頁首</a></p>
-        </footer>
       </div>
-    </body>	
-  </html>  
-      
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Coffee & Tea</div>
+          <h2>現磨精品咖啡　日月潭 魚池 現泡紅茶</h2>
+          <p>精品現磨咖啡，在地烘培咖啡，不追求高價位，要求香醇美味，口感厚實。</p>
+        </div>
+
+        <div class="panel" style="margin-bottom:22px;">
+          <div class="panel-body">
+            <p style="font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:12px;">有日月潭頭社在地咖啡還有嚴選進口咖啡豆，春天窗前，綠葉盎然，秋天整排落羽松，秘境。</p>
+            <ul class="feature-list">
+              <li>日月潭頭社在地咖啡</li>
+              <li>嚴選進口咖啡豆</li>
+              <li>日月潭魚池現泡紅茶</li>
+              <li>在地特產伴手禮</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Gallery</div>
+          <h2>禮品店與咖啡空間</h2>
+          <p>現場照片一覽。</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="panel"><img src="images/mcoffe5.jpg" alt="咖啡空間"></div>
+          <div class="panel"><img src="images/shop1.jpg" alt="禮品店"></div>
+          <div class="panel"><img src="images/shop2.jpg" alt="禮品店商品"></div>
+          <div class="panel"><img src="images/shop3.jpg" alt="禮品店內部"></div>
+          <div class="panel"><img src="images/mcoffe1.jpg" alt="咖啡"></div>
+          <div class="panel"><img src="images/mcoffe2.jpg" alt="咖啡製作"></div>
+          <div class="panel"><img src="images/mcoffe3.jpg" alt="咖啡空間"></div>
+          <div class="panel"><img src="images/mcoffe4.jpg" alt="咖啡吧台"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2018–2026 日月潭香林田莊 · 民宿電話：049-286-1855</p>
+      <p>手機：0905-595-617 陳小姐 ｜ 手機：0910-232-380 陳先生（包場、車聚、露營）</p>
+      <p><a href="https://www.google.com/maps/place/%E9%A6%99%E6%9E%97%E7%94%B0%E8%8E%8A%E6%B0%91%E5%AE%BF/@23.8354373,120.8998759,18.16z/data=!4m5!3m4!1s0x0:0x8d3e4e169d31cfa7!8m2!3d23.8352299!4d120.8998589">地址：台灣南投縣魚池鄉頭社村平和巷129之19號</a></p>
+      <p>本網站由 <a href="https://scott93723.github.io/Knowledge-Enterprise-Co-Ltd.com/">弘道實業有限公司</a> 維護製作</p>
+    </div>
+  </footer>
+</body>
+</html>
