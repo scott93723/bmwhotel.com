@@ -1,696 +1,844 @@
 <!DOCTYPE html>
-<html>
-  <head>
-   
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMW M3 Power 風格民宿｜日月潭香林田莊</title>
+  <meta name="description" content="日月潭香林田莊，主打 BMW M3 Power 風格民宿體驗，結合黑化車庫感、M 三色視覺、特色房型、咖啡空間與日月潭旅遊行程。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #08090d;
+      --bg-soft: #11131a;
+      --panel: rgba(255,255,255,0.05);
+      --panel-strong: rgba(255,255,255,0.08);
+      --text: #f4f7fb;
+      --muted: #9ca6b5;
+      --line: rgba(255,255,255,0.1);
+      --m-blue: #58c4ff;
+      --m-navy: #2753ff;
+      --m-red: #ff375f;
+      --shadow: 0 24px 70px rgba(0,0,0,0.36);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --container: 1220px;
+    }
 
-  	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121562907-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter", "Noto Sans TC", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(88,196,255,0.08), transparent 24%),
+        radial-gradient(circle at 15% 20%, rgba(255,55,95,0.08), transparent 20%),
+        linear-gradient(180deg, #05060a 0%, #090b12 45%, #0d1118 100%);
+      line-height: 1.7;
+    }
 
-  gtag('config', 'UA-121562907-1');
-</script>
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; }
 
+    .container {
+      width: min(calc(100% - 32px), var(--container));
+      margin: 0 auto;
+    }
 
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      background: rgba(7, 9, 14, 0.7);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
 
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MQ3ZZXZ');</script>
-<!-- End Google Tag Manager -->
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>日月潭民宿香林田莊</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">    
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
 
-  </head>
-  <body>
+    .brand-badge {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 12px 30px rgba(0,0,0,0.25);
+      position: relative;
+      overflow: hidden;
+    }
 
-  
-    <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MQ3ZZXZ"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  
+    .brand-badge::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, var(--m-blue) 0 33%, var(--m-navy) 33% 66%, var(--m-red) 66% 100%);
+      opacity: 0.25;
+      transform: skewX(-18deg) scale(1.5);
+    }
 
+    .brand-mark {
+      position: relative;
+      z-index: 1;
+      font-size: 1.2rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+    }
 
+    .brand-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
 
-    <div class="container">	
-      <!-- 導覽列 -->
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-		  <!-- 導覽列的頁首 -->
-          <div class="navbar-header">
-		    <a class="navbar-brand" href="index.html"><font color="#0066FF">日月潭</font>
+    .brand-sub {
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
 
-<font color="#8A2BE2">民宿</font> 
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.94rem;
+      justify-content: flex-end;
+    }
 
-<font color="#FF0000">香林田莊</font>
+    .nav-links a:hover { color: var(--text); }
 
-</a>
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-              <span class="sr-only">導覽按鈕</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>            
-          </div>
-		  
-		  <!-- 導覽列的項目 -->
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="index.html">首頁</a></li>
-             
-              <li><a href="https://www.google.com/maps/place/%E9%A6%99%E6%9E%97%E7%94%B0%E8%8E%8A%E6%B0%91%E5%AE%BF/@23.8354373,120.8998759,18.16z/data=!4m5!3m4!1s0x0:0x8d3e4e169d31cfa7!8m2!3d23.8352299!4d120.8998589">
-                馬上導航
-              </a></li>   
- 
-          <li>
-                <a href="fish.html">
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      border: 1px solid transparent;
+    }
 
-                 <font color="#0066FF">釣魚</font>
+    .btn:hover { transform: translateY(-2px); }
 
-<font color="#8A2BE2">船屋</font> 
+    .btn-primary {
+      background: linear-gradient(90deg, rgba(88,196,255,0.15), rgba(39,83,255,0.18), rgba(255,55,95,0.18));
+      border-color: rgba(255,255,255,0.14);
+      color: #fff;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+    }
 
-<font color="#FF0000">活動</font>  
-               
-             </a>
-         </li>
+    .btn-secondary {
+      background: rgba(255,255,255,0.03);
+      border-color: rgba(255,255,255,0.12);
+      color: #fff;
+    }
 
-             <li><a href="about_us.html">
-               關於我們
-             </a></li>
-              <li><a href="news.html">
-               最新消息
-             </a></li>
-      
-            <li><a href="house.html">
-               房型介紹
-             </a></li>
-          
-          <li>
-                <a href="mpower.html">
+    .hero {
+      padding: 38px 0 30px;
+    }
 
-                 <font color="#0066FF">M</font>
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: stretch;
+    }
 
-<font color="#8A2BE2">Power</font> 
+    .hero-copy,
+    .hero-media {
+      min-height: 680px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
 
-<font color="#FF0000">咖啡館</font>  
-               
-             </a>
-         </li>
+    .hero-copy {
+      padding: 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:
+        linear-gradient(180deg, rgba(5,7,12,0.55), rgba(5,7,12,0.9)),
+        url('images/mpower3.jpg') center/cover;
+    }
 
-          <li><a href="share.html">
-               民宿景點
-             </a>
-         </li>
-              <li><a href="nature.html">
-               賞螢火蟲
-             </a></li>
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #d8e4ef;
+    }
 
-              <li>
-              	<a href="shop.html">
-                <font color="#0066FF">M</font>
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--m-blue), var(--m-navy), var(--m-red));
+    }
 
-<font color="#8A2BE2">禮</font> 
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 8vw, 6.2rem);
+      line-height: 0.92;
+      letter-spacing: -0.05em;
+      max-width: 9ch;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
 
-<font color="#FF0000">品店</font>
-  
-               
-             </a>
-         </li>
-             
+    .hero-copy p {
+      margin: 22px 0 0;
+      max-width: 37rem;
+      color: #d0d7e2;
+      font-size: 1.04rem;
+    }
 
-              <li><a href="https://play.google.com/store/apps/details?id=com.god.hotelbmwm3">
-             日月潭民宿香林田莊 Android App下載</a></li>
-               <li><a href="https://play.google.com/store/apps/details?id=com.god.superworldbnb">
-             背包客全球民宿 Android App下載</a></li>  
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
 
-              <li><a href="https://play.google.com/store/apps/details?id=com.adtechinno.qrcode_scanner">
-             QR Code掃瞄器 Android App下載</a></li>   
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 40px;
+    }
 
+    .stat {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+    }
 
-			  <li><a href="https://www.facebook.com/%E6%97%A5%E6%9C%88%E6%BD%AD%E9%A6%99%E6%9E%97%E7%94%B0%E8%8E%8A-2072650812978160/">
-			  FB訂房</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">景點 <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="https://www.sunmoonlake.gov.tw/index.aspx#1">日月潭</a></li>
-                  <li><a href="http://www.nine.com.tw/">九族文化村</a></li>                  
-                  <li role="separator" class="divider"></li> 
-                  <li><a href="https://kumar.tw/b/">南投妖怪村</a></li>
-				  <li><a href="https://www.cingjing.gov.tw/">清境農場</a></li>
-                </ul>
-              </li>
-            </ul>          
-          </div>
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.83rem;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .stat-value {
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .hero-media img {
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.08) contrast(1.02);
+    }
+
+    .hero-card {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      padding: 22px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(7,10,15,0.45), rgba(7,10,15,0.9));
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-card strong {
+      display: block;
+      font-size: 1.12rem;
+      margin-bottom: 8px;
+    }
+
+    .section {
+      padding: 28px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.6rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+    }
+
+    .section-head p {
+      margin: 10px 0 0;
+      max-width: 44rem;
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+    }
+
+    .panel {
+      border-radius: var(--radius-lg);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .panel-body {
+      padding: 32px;
+    }
+
+    .panel-body p { color: #ccd5df; }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .feature-list li {
+      display: flex;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      color: #d2d8e2;
+    }
+
+    .feature-list li:last-child { border-bottom: 0; }
+    .feature-list li::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      margin-top: 9px;
+      border-radius: 50%;
+      background: linear-gradient(90deg, var(--m-blue), var(--m-navy), var(--m-red));
+      flex: none;
+      box-shadow: 0 0 14px rgba(88,196,255,0.35);
+    }
+
+    .image-fill img { height: 100%; object-fit: cover; }
+
+    .strip-box {
+      padding: 26px;
+      min-height: 220px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .strip-box::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -30px;
+      width: 140px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, rgba(255,255,255,0.05), transparent);
+      transform: skewX(-22deg);
+    }
+
+    .strip-box span {
+      display: inline-block;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #e7eef7;
+      margin-bottom: 14px;
+    }
+
+    .strip-box h3 {
+      margin: 0 0 12px;
+      font-size: 1.34rem;
+      letter-spacing: -0.03em;
+    }
+
+    .strip-box p { margin: 0; color: #ccd5df; }
+
+    .room-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .room-card img {
+      aspect-ratio: 4 / 4.4;
+      object-fit: cover;
+    }
+
+    .room-body {
+      padding: 20px;
+    }
+
+    .room-body h3 {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+      text-transform: uppercase;
+    }
+
+    .room-body p { margin: 0; color: var(--muted); }
+
+    .room-tag {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .experience-card img {
+      aspect-ratio: 4 / 3.6;
+      object-fit: cover;
+    }
+
+    .experience-body {
+      padding: 18px;
+    }
+
+    .experience-body h3 {
+      margin: 0 0 8px;
+      font-size: 1.02rem;
+    }
+
+    .experience-body p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 0.9fr 1.2fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .contact-card { padding: 28px; }
+    .contact-card h3 {
+      margin: 0 0 14px;
+      font-size: 0.88rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #e6edf7;
+    }
+
+    .contact-card strong { font-size: 1.18rem; }
+    .contact-card p { margin: 0; color: #ccd5df; }
+
+    .map-wrap iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      border: 0;
+      display: block;
+    }
+
+    .cta {
+      padding: 38px 0 70px;
+    }
+
+    .cta-box {
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1.15fr auto;
+      gap: 20px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(100deg, rgba(88,196,255,0.08), transparent 28%, rgba(39,83,255,0.08) 58%, rgba(255,55,95,0.08));
+      pointer-events: none;
+    }
+
+    .cta-box h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.04em;
+      line-height: 1.02;
+      text-transform: uppercase;
+    }
+
+    .cta-box p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      max-width: 40rem;
+    }
+
+    .site-footer {
+      padding: 0 0 32px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .site-footer a { color: #fff; }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .grid-2,
+      .contact-grid,
+      .cta-box,
+      .room-grid,
+      .experience-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero-copy,
+      .hero-media { min-height: 560px; }
+
+      .contact-grid .map-wrap {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 14px 0 18px;
+      }
+
+      .nav-links { justify-content: flex-start; gap: 14px; }
+
+      .hero-copy,
+      .hero-media { min-height: auto; }
+
+      .hero-copy { padding: 30px; }
+
+      .hero-stats,
+      .grid-2,
+      .room-grid,
+      .experience-grid,
+      .contact-grid,
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-grid .map-wrap { grid-column: auto; }
+      .section-head { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <div class="brand-badge"><span class="brand-mark">M3</span></div>
+        <div>
+          <div class="brand-title">日月潭香林田莊</div>
+          <div class="brand-sub">BMW M3 Power Style Homestay</div>
         </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#about">關於民宿</a>
+        <a href="#rooms">房型展示</a>
+        <a href="#experience">體驗行程</a>
+        <a href="#contact">聯絡訂房</a>
+        <a class="btn btn-primary" href="tel:0905595617">立即訂房</a>
       </nav>
+    </div>
+  </header>
 
-
- <font color="#0066FF">    <p><h3>首頁 <h3></p></font>
- 
-
-      <!-- 輪播 -->
-      <div id="myCarousel" class="carousel slide">
-	    <!-- 輪播指示 -->
-	    <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-          <li data-target="#myCarousel" data-slide-to="3"></li>
-          <li data-target="#myCarousel" data-slide-to="4"></li>
-          <li data-target="#myCarousel" data-slide-to="5"></li>
-          <li data-target="#myCarousel" data-slide-to="6"></li>
-          <li data-target="#myCarousel" data-slide-to="7"></li>
-          <li data-target="#myCarousel" data-slide-to="8"></li>
-          <li data-target="#myCarousel" data-slide-to="9"></li>
-          <li data-target="#myCarousel" data-slide-to="10"></li>
-        </ol>
-	
-		<!-- 輪播內容 -->
-	    <div class="carousel-inner">
-		  <!-- 第一個輪播項目 (包含圖片、標題與介紹) --> 
-          <div class="item active">
-  		    <img src="images/home1.jpg">
-            <div class="carousel-caption">
-              <h2></h2>
-          <font color="#0066FF">
-    <p class="lead">日月潭民宿香林田莊</p></font>
-            </div>
-          </div>
-		  
-		  <!-- 第二個輪播項目 (包含圖片、標題與介紹) --> 
-          <div class="item">
-            <img src="images/home2.jpg">
-            <div class="carousel-caption">
-              <h2></h2>
-
-
-<font color="#8A2BE2">    
-              <p class="lead">日月潭民宿香林田莊</p>
-            </font>
-            </div>
-          </div>
-		  
-          <!-- 第三個輪播項目 (包含圖片、標題與介紹) --> 
-		      <div class="item">
-            <img src="images/home3.jpg">
-            <div class="carousel-caption">
-              <h2></h2>
-
-<font color="#FF0000"> 
-
-              <p class="lead">日月潭民宿香林田莊</p>
-            </font>
-            </div>
-          </div>
-        
-        <div class="item">
-            <img src="images/home4.jpg">
-            <div class="carousel-caption">
-              <h2></h2>
-              <p class="lead">日月潭民宿香林田莊</p>
-            </div>
-          </div>
-
-
-        <div class="item">
-            <img src="images/home5.jpg">
-            <div class="carousel-caption">
-              <h2></h2>
-              <p class="lead">日月潭民宿香林田莊</p>
-            </div>
-          </div>
-
-
-         <div class="item">
-            <img src="images/home6.jpg">
-            <div class="carousel-caption">
-              <h2></h2>
-              <p class="lead">日月潭民宿香林田莊</p>
-            </div>
-          </div>
-
-		
-        <div class="item">
-            <img src="images/home7.jpg">
-            <div class="carousel-caption">
-              <h2></h2>
-              <p class="lead">日月潭民宿香林田莊</p>
-            </div>
-          </div>
-
-
-        <div class="item">
-            <img src="images/home8.jpg">
-            <div class="carousel-caption">
-              <h2></h2>
-              <p class="lead">日月潭民宿香林田莊</p>
-            </div>
-          </div>
-
-         <div class="item">
-            <img src="images/home9.jpg">
-            <div class="carousel-caption">
-              <h2></h2>
-              <p class="lead">日月潭民宿香林田莊</p>
-            </div>
-          </div>
-
-
-       <div class="item">
-            <img src="images/home10.jpg">
-            <div class="carousel-caption">
-              <h2></h2>
-              <p class="lead">日月潭民宿香林田莊</p>
-            </div>
-          </div>
-
-
-       <div class="item">
-            <img src="images/home11.jpg">
-            <div class="carousel-caption">
-              <h2></h2>
-              <p class="lead">日月潭民宿香林田莊</p>
-            </div>
-          </div>
-
-        </div>
-  
-
-		<!-- 輪播控制 -->
-        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left"></span></a>
-        <a class="carousel-control right" href="#myCarousel" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right"></span></a>
-
-
-      </div>     
-
- <marquee bgcolor="66b3ff" textcolor="0066FF" direction="right" height="30" scrollamount="5" behavior="alternate">
-  狂賀！地表最強汽車雜誌強力推薦！
-<font color="#0066FF">B</font>
-
-<font color="#8A2BE2">M</font> 
-
-<font color="#FF0000">W M Power</font>
-  汽車工業風特色民宿!</marquee>
-
-
-	  	    <p>  
-          <h2> 
-    <!--    <font color="#0066FF">BMW M Power 鄉村汽車工業風</font>-->
-        </h2>
-      </p>
-   <p>
-        <font color="#7700FF">
-        <h2>Sun-Moon Lake Toushe</h2>
-        </font>
-      </p>
-      <div>
-      
-        <p>
-        <h1>  
-       <font color="#FF3333"> </font>
-       </h1>
-       </p>
-
-       
- <font color="#8A2BE2">    <p><h3>全台唯一 
-
-<font color="#0066FF">B</font>
-
-<font color="#8A2BE2">M</font> 
-
-<font color="#FF0000">W</font>
-
-<font color="#8A2BE2"> &nbsp;  M </font> 
-
-<font color="#FF0000"> Power </font>
-
- 鄉村汽車工業風特色民宿<h3></p></font>
- 
- <font color="#FF0000">    
-
- 	<p><h3>馬上訂房專線：0905-595-617<h3>
-<div class="telbtn" onclick="location.href='tel:0905-595-617'"></div></p></font>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div>
+            <div class="eyebrow">Track Inspired · Lake Escape</div>
+            <h1>BMW M3 Power Style</h1>
             <p>
-            <h4>
-              
-              <p>頭社村位於日月潭南邊的村落，海拔高度約在640-670公尺間。</p>
-              <p>地勢平坦，適合騎乘鐵馬，自行車道可穿越頭社活盆地。</p>
-              <p>金針花園，頭社水庫，頭社盆地農田充沛的灌溉水源，依舊訴說著農村的發展。</p>
-              <p>水圳邊的豐富植物豐富常吸引成群的蜜蜂，蝴蝶飛舞.自行車道中段視野逐漸開闊。</p>
-              <p>兩邊盡是綠野與農田絲瓜園，呈現出典型的台灣農村景色，令人心曠神怡。</p>
-              <p>  自行車道後段連接台21線環湖道路往日月潭也可以乘船到伊達邵碼頭欣賞湖光山色，</p>
-              <p>日月潭纜車到九族文化村，魚池鄉。</p>
-
-
-            </h4>
+              把日月潭民宿做成像性能車展示間的感覺。黑化空間、M 三色視覺、機械感細節、車聚氛圍與度假舒適度融合，打造更強烈、更有記憶點的住宿體驗。
             </p>
-        <font color="#FF3333">    <p><h3>讚是一種鼓勵，分享是最好的支持！<h3></p></font>
-   
-
-
-	<!--  警報效果 -->
-	  <hr>
-	  <div class="alert alert-success alert-dismissible" role="alert">
-	    <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
-
-
-    <font color="#0066FF"> BMW</font>
-
-<font color="#8A2BE2">  M </font> 
-
-<font color="#FF0000"> Power 香林田莊 </font>
-        <a href="news.html" class="alert-link"><strong> 最新消息：</strong></a>
-
-
-      <p>超大停車場：最多可容納８０台汽車,停車場配備高級大門防護,安全可靠！</p>
-      <p>距離向山遊客中心開車僅十分鐘內到達,方便舒適,不塞車!</p>
-      <p>高級雙人房價含早餐：定價：3500元 ,假日：2500元 ,平日2000元</p>
-      </div>
-	   <hr>
-
-<div class="alert alert-success alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
-   <font color="#0066FF"> BMW</font>
-
-<font color="#8A2BE2">  M </font> 
-
-<font color="#FF0000"> Power 香林田莊 </font>
-
-        <a href="news.html" class="alert-link"><strong> 最新消息：</strong></a>
-      
-   <p>  日月潭全球最夯的SUP立式划槳(採預約制請洽老闆)活動！</p>
-     
-
-      </div>
-
-
-<div class="alert alert-success alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
-   <font color="#0066FF"> BMW</font>
-
-<font color="#8A2BE2">  M </font> 
-
-<font color="#FF0000"> Power 香林田莊 </font>
-
-        <a href="news.html" class="alert-link"><strong> 最新消息：</strong></a>
-      
-      超夯日月潭船屋釣魚活動一天500元!請洽老闆!
-     
-
-      </div>
-
-
-    <div class="alert alert-success alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>
-
-  <font color="#0066FF"> BMW</font>
-
-<font color="#8A2BE2">  M </font> 
-
-<font color="#FF0000"> Power 香林田莊 </font>
-      
-        <a href="news.html" class="alert-link"><strong> 最新消息：</strong></a>
-       
-      狂賀！史上最強汽車雜誌強力推薦報導！
-
-
-      </div>
-	  
-      
-      <!-- 內容區 -->
-	  <section>
-    <font color="#FF3333">    <p><h1>度假房型<h1></p></font>
-
-<div class="row text-center">
-          <div class="col-md-4">
-            <img class="img-circle" src="images/m1.jpg" width="320" height="320">
-            <h3><font color="#0066FF"> BMW</font>
-
-<font color="#8A2BE2">  M </font> 
-
-<font color="#FF0000"> 1 </font>
- 房型</h3>
-            <p>小鋼炮房型</p>
-            <p><a class="btn btn-default" href="house.html" role="button">請點我&raquo;</a></p>
-          </div>
-      
-          <div class="col-md-4">
-            <img class="img-circle" src="images/m2.jpg" width="320" height="320">
-            <h3>
-<font color="#0066FF"> BMW</font>
-
-<font color="#8A2BE2">  M </font> 
-
-<font color="#FF0000"> 2 </font>
-
-            房型</h3>
-            <p>新款房型</p>
-            <p><a class="btn btn-default" href="house.html" role="button">請點我&raquo;</a></p>
-          </div>
-      
-          <div class="col-md-4">
-            <img class="img-circle" src="images/m3.jpg" width="320" height="320">
-            <h3><font color="#0066FF"> BMW</font>
-
-<font color="#8A2BE2">  M </font> 
-
-<font color="#FF0000"> 3 </font>
-房型</h3>
-            <p>傳奇房型</p>
-            <p><a class="btn btn-default" href="house.html" role="button">請點我&raquo;</a></p>
-          </div>
-    </div>
-    
-
-
-
-	    <!-- 第一列 -->
-	    <div class="row text-center">
-
-        <div class="col-md-4">
-            <img class="img-circle" src="images/m5.jpg" width="320" height="320">
-            <h3><font color="#0066FF"> BMW</font>
-
-<font color="#8A2BE2">  M </font> 
-
-<font color="#FF0000"> 5 </font>
-房型</h3>
-            <p>休旅運動房型</p>
-            <p><a class="btn btn-default" href="house.html" role="button">請點我&raquo;</a></p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="tel:0905595617">訂房專線 0905-595-617</a>
+              <a class="btn btn-secondary" href="house.html">查看房型</a>
+            </div>
           </div>
 
-        <div class="col-md-4">
-            <img class="img-circle" src="images/m6.jpg" width="320" height="320">
-            <h3><font color="#0066FF"> BMW</font>
-
-<font color="#8A2BE2">  M </font> 
-
-<font color="#FF0000"> 6 </font>
-房型</h3>
-            <p>旗艦運動房型</p>
-            <p><a class="btn btn-default" href="house.html" role="button">請點我&raquo;</a></p>
-          </div>   
-      
-
-
-
-          <div class="col-md-4">
-            <img class="img-circle" src="images/mcoffe10.jpg" width="320" height="320">
-            <h3><font color="#0066FF"> BMW</font>
-
-<font color="#8A2BE2">  M </font> 
-
-<font color="#FF0000"> Power </font>
-</h3>
-
-
-            <p>
-            
-<font color="#0066FF">M</font>
-
-<font color="#8A2BE2">Power</font> 
-
-<font color="#FF0000"> 咖啡廳</font>
-
-             </p>
-            <p><a class="btn btn-default" href="mpower.html" role="button">請點我&raquo;</a></p>
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="stat-label">Theme</div>
+              <div class="stat-value">M3 Power 工業風</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Location</div>
+              <div class="stat-value">日月潭頭社村</div>
+            </div>
+            <div class="stat">
+              <div class="stat-label">Booking</div>
+              <div class="stat-value">0905-595-617</div>
+            </div>
           </div>
-		  
-         
-         
-		</div>
-		
-
-
-     <!-- 第一列 -->
-      <div class="row text-center">
-
-        <div class="col-md-4">
-            <img class="img-circle" src="images/house5.jpg" width="320" height="320">
-            <h3>超Q超軟床</h3>
-            <p>頂級房型</p>
-            <p><a class="btn btn-default" href="house.html" role="button">請點我&raquo;</a></p>
-          </div>
-
-        <div class="col-md-4">
-            <img class="img-circle" src="images/house12.jpg" width="320" height="320">
-            <h3>超舒服的床 </h3>
-            <p>旗艦房型</p>
-            <p><a class="btn btn-default" href="house.html" role="button">請點我&raquo;</a></p>
-          </div>   
-      
-
-
-
-          <div class="col-md-4">
-            <img class="img-circle" src="images/shop2.jpg" width="320" height="320">
-            <h3><font color="#0066FF"> BMW</font>
-
-<font color="#8A2BE2">  M </font> 
-
-<font color="#FF0000"> 禮品店 </font>
- </h3>
-            <p>當地特產日月潭紅茶</p>
-            <p><a class="btn btn-default" href="shop.html" role="button">請點我&raquo;</a></p>
-          </div>
-      
-         
-         
-    </div>
-    
-
-
-
-
-
-
-
-
-		<!-- 第二列 -->
-		<div class="row text-center">
-		
-         <div class="col-md-4">
-            <img class="img-circle" src="images/mpower2.jpg" width="320" height="320">
-            <h3>民宿景點</h3>
-            <p>夢幻景點</p>
-            <p><a class="btn btn-default" href="share.html" role="button">請點我&raquo;</a></p>
-          </div>
-      
-
-
-
-          <div class="col-md-4">
-            <img class="img-circle" src="images/about11.jpg" width="320" height="320">
-            <h3>賞螢火蟲</h3>
-            <p>火金姑</p>
-            <p><a class="btn btn-default" href="nature.html" role="button">請點我&raquo;</a></p>
-          </div>
-		  
-  <div class="col-md-4">
-            <img class="img-circle" src="images/homestay.jpg" width="320" height="320">
-            <h3>關於我們</h3>
-            <p>合法民宿</p>
-            <p><a class="btn btn-default" href="about_us.html" role="button">請點我&raquo;</a></p>
-          </div>
-
-<p>交通方式</p>
- <p> ◆自行開車：(兩種走法)</p>
-<font color="#0066FF"> 
-<p>  第一種走法最快到達！館長推薦！</p>
- <p> 1.國道三號＞【集集/名間】交流道下高速公路＞接台三線，往集集方向＞名間＞接【新台16線】＞集集、集鹿大橋＞水里＞蛇窯＞接【台21線】＞頭社＞即達日月潭香林田莊民宿!</p>
-<p>
-第二種走法比較慢,但是可以環湖,如果不趕時間,不怕塞車的話,悠閒賞湖路線！</p>
-<p>
-2.國道3號→霧峰系統交流道→國道6號→埔里愛蘭交流道下高速公路→接【台21】線 →日月潭→水社→頭社→日月潭香林田莊民宿!</p>
-</font>
-
-<p>◆搭乘大眾運輸交通工具：</p>
- <font color="#8A2BE2">   
-
-<p>1.搭乘南投客運，在日月潭下車處，在對面搭乘南投客運往車埕。在頭社派出所下車。</p>
-
-<p>2.搭乘高鐵在地下一樓6號出口改搭南投客運往日月潭，在日月潭潭下車處，改搭豐榮客運往水里，在頭社派出所 下車，約600-800公尺。
-</p>
-<p>
-3.搭乘南投客運，在日月潭下車處，在對面搭乘南投客運往車埕。在頭社派出所下車。
-</p>
-
-
-
-<p>◎台灣高鐵：www.thsrc.com.tw</p>
-<p>◎南投客運：http://www.ntbus.com.tw/s01.html</p>
- </font>
-  <p>馬上訂房匯款帳號：</p>
- <font color="#FF0000"> 
-
- <p> 郵局代號 700 </p>
- <p> 頭社分行</p>
- <p> 戶名： 陳坤山 </p>
- <p> 郵局帳號0401391-0003821   </p>
-   </font>
-
-      
         </div>
-      </section>      
 
+        <div class="hero-media">
+          <img src="images/home10.jpg" alt="BMW M3 Power 風格民宿主視覺">
+          <div class="hero-card">
+            <strong>不只是民宿，是一種車感氛圍。</strong>
+            讓住宿像走進一間收藏性能車文化的黑色車庫會館，帥、乾淨、帶點狠勁。
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">About The Stay</div>
+            <h2>M Power 氛圍民宿</h2>
+            <p>
+              香林田莊位於日月潭頭社，原本就有很鮮明的特色主題。這次把整體視覺往 BMW M3 Power 方向推得更徹底，讓首頁一打開就有性能、速度、機械與車聚感。
+            </p>
+          </div>
+        </div>
 
+        <div class="grid-2">
+          <article class="panel">
+            <div class="panel-body">
+              <div class="eyebrow">Design Language</div>
+              <p>
+                整體採用黑灰金屬底色，加上 M 三色作為速度符號，視覺更像性能品牌網站，而不是傳統民宿模板。目標就是帥、狠、俐落、直接。
+              </p>
+              <ul class="feature-list">
+                <li>黑化車庫感與工業風空間語言</li>
+                <li>BMW M 三色視覺節奏與性能感</li>
+                <li>適合車聚、拍照、打卡與主題住宿</li>
+                <li>保留度假舒適度，不只是外表兇</li>
+              </ul>
+            </div>
+          </article>
 
+          <div class="panel image-fill">
+            <img src="images/mpower2.jpg" alt="M Power 風格展示">
+          </div>
+        </div>
+      </div>
+    </section>
 
-	 
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Core Vibe</div>
+            <h2>M3 Power 三種感覺</h2>
+            <p>不是單純放 BMW 字樣，而是把性能車文化的視覺節奏真正做進網站裡。</p>
+          </div>
+        </div>
 
-      <!-- 頁尾 -->
-	  <hr>
-	  <footer>       
-<font color="#0066FF"> 
-        <p>&copy;2018 
+        <div class="grid-2" style="grid-template-columns:repeat(3,1fr);">
+          <article class="panel strip-box">
+            <span>01</span>
+            <h3>Performance</h3>
+            <p>大字體、強對比、速度感色條，像性能車發表頁。</p>
+          </article>
+          <article class="panel strip-box">
+            <span>02</span>
+            <h3>Garage Mood</h3>
+            <p>黑灰底、金屬感、硬派線條，像高級車庫與改裝會館。</p>
+          </article>
+          <article class="panel strip-box">
+            <span>03</span>
+            <h3>Track Energy</h3>
+            <p>讓民宿不只住宿，還有一點車聚與賽道文化的味道。</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-          
-<font color="#0066FF">日月潭</font>
+    <section class="section" id="rooms">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Room Lineup</div>
+            <h2>M Room Collection</h2>
+            <p>直接把房型做成像車系編成，讓每一間都有自己的個性與性能標籤。</p>
+          </div>
+        </div>
 
-<font color="#8A2BE2">民宿</font> 
+        <div class="room-grid">
+          <article class="panel room-card">
+            <img src="images/m1.jpg" alt="M1 房型">
+            <div class="room-body">
+              <h3>M1 Room</h3>
+              <p>小鋼炮風格，俐落、靈活、好上手，適合雙人入住。</p>
+              <div class="room-tag">小鋼炮房型</div>
+            </div>
+          </article>
 
-<font color="#FF0000">香林田莊</font>
+          <article class="panel room-card">
+            <img src="images/m3.jpg" alt="M3 房型">
+            <div class="room-body">
+              <h3>M3 Room</h3>
+              <p>經典性能代表，最能體現整體主題感與視覺張力。</p>
+              <div class="room-tag">傳奇房型</div>
+            </div>
+          </article>
 
+          <article class="panel room-card">
+            <img src="images/m5.jpg" alt="M5 房型">
+            <div class="room-body">
+              <h3>M5 Room</h3>
+              <p>更大、更穩、更豪華，適合想要舒適又有氣場的旅人。</p>
+              <div class="room-tag">休旅運動房型</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-          &middot;
-          民宿電話：0492861855</p> 
-        </font>
- <font color="#8A2BE2">   
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Experience</div>
+            <h2>住宿以外，也要夠好玩</h2>
+            <p>從咖啡、景點、船屋到自然行程，讓整個體驗像一趟完整的 M Power Weekend。</p>
+          </div>
+        </div>
 
-     <p>     手機：0905-595-617 陳小姐</p>
-      <p>    手機：0910-232-380 陳先生：包場,車聚,露營</p>
-     </font>
+        <div class="experience-grid">
+          <article class="panel experience-card">
+            <img src="images/mcoffe10.jpg" alt="M Power 咖啡館">
+            <div class="experience-body">
+              <h3>M Power 咖啡館</h3>
+              <p>延續性能主題，補滿拍照感與停留體驗。</p>
+            </div>
+          </article>
 
- <font color="#FF0000"> 
-    
-      
-     
-     <a href="https://www.google.com/maps/place/%E9%A6%99%E6%9E%97%E7%94%B0%E8%8E%8A%E6%B0%91%E5%AE%BF/@23.8354373,120.8998759,18.16z/data=!4m5!3m4!1s0x0:0x8d3e4e169d31cfa7!8m2!3d23.8352299!4d120.8998589">
-      <p>   地址：台灣南投縣魚池鄉頭社村平和巷129之19號</p>
-    </a>   
-    <p> 經緯度：23.8354373,120.8998759</p>
-	   
-   </font>
-		  本網站由<a href="https://scott93723.github.io/Knowledge-Enterprise-Co-Ltd.com/" class="text-success">弘道實業有限公司</a>維護製作
+          <article class="panel experience-card">
+            <img src="images/mpower1.jpg" alt="民宿景點">
+            <div class="experience-body">
+              <h3>民宿景點</h3>
+              <p>周邊景點與湖景路線，適合開車、拍照、放風。</p>
+            </div>
+          </article>
 
-		<p class="text-right"><a href="#">回到頁首</a></p>
-      </footer>
+          <article class="panel experience-card">
+            <img src="images/fish1.jpg" alt="船屋活動">
+            <div class="experience-body">
+              <h3>船屋釣魚活動</h3>
+              <p>主題住宿之外，再加點戶外行程，玩法更完整。</p>
+            </div>
+          </article>
+
+          <article class="panel experience-card">
+            <img src="images/about11.jpg" alt="賞螢火蟲">
+            <div class="experience-body">
+              <h3>賞螢火蟲</h3>
+              <p>白天車感、晚上自然感，反差也是這裡的魅力。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Booking & Access</div>
+            <h2>聯絡與交通</h2>
+            <p>想包場、車聚、住宿、露營或安排行程，直接聯絡最快。</p>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <article class="panel contact-card">
+            <h3>訂房專線</h3>
+            <p><strong>0905-595-617</strong><br><br>陳小姐</p>
+          </article>
+
+          <article class="panel contact-card">
+            <h3>民宿資訊</h3>
+            <p><strong>049-286-1855</strong><br><br>包場、車聚、露營可洽 0910-232-380</p>
+          </article>
+
+          <div class="panel map-wrap">
+            <iframe title="香林田莊地圖" src="https://www.google.com/maps?q=23.8352299,120.8998589&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+
+        <div class="panel contact-card" style="margin-top:18px;">
+          <h3>地址</h3>
+          <p><strong>台灣南投縣魚池鄉頭社村平和巷129之19號</strong><br><br>從向山遊客中心開車約十分鐘內可到達。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container panel cta-box">
+        <div>
+          <div class="eyebrow">Ready To Launch</div>
+          <h2>立即進場，感受 M Power 周末</h2>
+          <p>如果你想找一間真的有主題、有態度、有記憶點的日月潭民宿，這間就是走不同路線的那一種。</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end;position:relative;z-index:1;">
+          <a class="btn btn-primary" href="tel:0905595617">立即訂房</a>
+          <a class="btn btn-secondary" href="https://www.facebook.com/%E6%97%A5%E6%9C%88%E6%BD%AD%E9%A6%99%E6%9E%97%E7%94%B0%E8%8E%8A-2072650812978160/">FB 訂房</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      © 2018–2026 日月潭香林田莊 · 本網站由 <a href="https://scott93723.github.io/Knowledge-Enterprise-Co-Ltd.com/">弘道實業有限公司</a> 維護製作
     </div>
-  </body>	
-</html>  
-    
+  </footer>
+</body>
+</html>
