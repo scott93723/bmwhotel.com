@@ -129,6 +129,34 @@
 
     .nav-links a:hover { color: var(--text); }
 
+    .dropdown-wrap { display: inline-flex; align-items: center; }
+    .dropdown-menu-custom {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      margin-top: 10px;
+      min-width: 160px;
+      background: rgba(12,14,22,0.95);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 8px 0;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+      backdrop-filter: blur(14px);
+      z-index: 200;
+    }
+    .dropdown-wrap.open .dropdown-menu-custom { display: flex; flex-direction: column; }
+    .dropdown-menu-custom a {
+      padding: 10px 18px;
+      font-size: .92rem;
+      color: var(--muted);
+      transition: color .2s, background .2s;
+    }
+    .dropdown-menu-custom a:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.06);
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -592,6 +620,16 @@
         <a href="share.html">民宿景點</a>
         <a href="nature.html">賞螢火蟲</a>
         <a href="shop.html" style="color:var(--m-red);">M禮品店</a>
+        <a href="https://www.facebook.com/%E6%97%A5%E6%9C%88%E6%BD%AD%E9%A6%99%E6%9E%97%E7%94%B0%E8%8E%8A-2072650812978160/">FB訂房</a>
+        <span style="position:relative;cursor:pointer;" class="dropdown-wrap">
+          <a href="#" onclick="event.preventDefault();this.parentElement.classList.toggle('open');">遊憩地圖 ▾</a>
+          <span class="dropdown-menu-custom">
+            <a href="https://www.sunmoonlake.gov.tw/index.aspx#1">日月潭</a>
+            <a href="http://www.nine.com.tw/">九族文化村</a>
+            <a href="https://kumar.tw/b/">南投妖怪村</a>
+            <a href="https://www.cingjing.gov.tw/">清境農場</a>
+          </span>
+        </span>
         <a class="btn btn-primary" href="tel:0905595617">立即訂房</a>
       </nav>
     </div>
