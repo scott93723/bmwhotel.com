@@ -426,16 +426,28 @@
     .room-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      gap: 24px;
+    }
+
+    .room-card {
+      text-align: center;
+      background: transparent;
+      border: none;
+      box-shadow: none;
     }
 
     .room-card img {
-      aspect-ratio: 4 / 4.4;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
       object-fit: cover;
+      margin: 0 auto 16px;
+      border: 3px solid rgba(255,255,255,0.12);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
     }
 
     .room-body {
-      padding: 20px;
+      padding: 0 10px;
     }
 
     .room-body h3 {
@@ -628,6 +640,8 @@
       .panel-body { padding: 22px; }
 
       .room-tag, .room-body h3 { font-size: 1rem; }
+      .room-card img { width: 180px; height: 180px; }
+      .room-grid { grid-template-columns: 1fr; gap: 30px; }
 
       .experience-body h3 { font-size: 0.95rem; }
       .experience-body p { font-size: 0.88rem; }
@@ -811,7 +825,7 @@
         </div>
 
         <div class="room-grid">
-          <article class="panel room-card">
+          <article class="room-card">
             <img src="images/m1.jpg" alt="M1 房型">
             <div class="room-body">
               <h3>M1 Room</h3>
@@ -821,7 +835,7 @@
             </div>
           </article>
 
-          <article class="panel room-card">
+          <article class="room-card">
             <img src="images/m2.jpg" alt="M2 房型">
             <div class="room-body">
               <h3>M2 Room</h3>
@@ -831,7 +845,7 @@
             </div>
           </article>
 
-          <article class="panel room-card">
+          <article class="room-card">
             <img src="images/m3.jpg" alt="M3 房型">
             <div class="room-body">
               <h3>M3 Room</h3>
@@ -841,7 +855,7 @@
             </div>
           </article>
 
-          <article class="panel room-card">
+          <article class="room-card">
             <img src="images/m5.jpg" alt="M5 房型">
             <div class="room-body">
               <h3>M5 Room</h3>
@@ -851,7 +865,7 @@
             </div>
           </article>
 
-          <article class="panel room-card">
+          <article class="room-card">
             <img src="images/m6.jpg" alt="M6 房型">
             <div class="room-body">
               <h3>M6 Room</h3>
