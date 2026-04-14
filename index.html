@@ -561,32 +561,50 @@
       .cta-box,
       .room-grid,
       .experience-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
       }
 
       .hero-copy,
-      .hero-media { min-height: 560px; }
+      .hero-media { min-height: 420px; }
 
       .contact-grid .map-wrap {
-        grid-column: span 2;
+        grid-column: auto;
+        min-height: 300px;
       }
     }
 
     @media (max-width: 760px) {
       .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 14px 0 18px;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 0;
+        min-height: 64px;
       }
 
-      .nav-links { justify-content: flex-start; gap: 14px; }
+      .brand-badge { width: 40px; height: 40px; }
+      .brand-title { font-size: 0.88rem; }
+      .brand-sub { font-size: 0.65rem; }
+
+      .nav-links { gap: 10px; }
+
+      .hero { padding: 16px 0 20px; }
 
       .hero-copy,
       .hero-media { min-height: auto; }
 
-      .hero-copy { padding: 30px; }
+      .hero-copy { padding: 24px; }
 
-      .hero-stats,
+      h1 { font-size: clamp(2rem, 10vw, 3.2rem); }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; justify-content: center; }
+
+      .hero-grid,
       .grid-2,
       .room-grid,
       .experience-grid,
@@ -595,8 +613,22 @@
         grid-template-columns: 1fr;
       }
 
-      .contact-grid .map-wrap { grid-column: auto; }
+      .contact-grid .map-wrap { grid-column: auto; min-height: 260px; }
       .section-head { grid-template-columns: 1fr; }
+
+      .strip-box { min-height: auto; }
+
+      .cta-box { padding: 24px; }
+      .cta-box h2 { font-size: 1.6rem; }
+
+      .section { padding: 20px 0; }
+      .panel-body { padding: 22px; }
+
+      .room-tag, .room-body h3 { font-size: 1rem; }
+
+      .experience-body h3 { font-size: 0.95rem; }
+      .experience-body p { font-size: 0.88rem; }
+    }
     }
   
     .hamburger {

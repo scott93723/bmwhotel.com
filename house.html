@@ -413,24 +413,31 @@
       .detail,
       .detail-price,
       .cta-box {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
       }
 
       .detail .gallery,
       .detail .detail-body {
-        grid-column: span 2;
+        grid-column: auto;
       }
     }
 
     @media (max-width: 760px) {
       .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 14px 0 18px;
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 0;
+        min-height: 64px;
       }
 
-      .nav-links { justify-content: flex-start; gap: 14px; }
-      .hero-box { padding: 28px; min-height: 380px; }
+      .brand-badge { width: 40px; height: 40px; }
+      .brand-title { font-size: 0.88rem; }
+      .brand-sub { font-size: 0.65rem; }
+      .nav-links { gap: 10px; }
+
+      .hero-box { padding: 24px; min-height: 280px; }
+      .hero-box h1 { font-size: clamp(2rem, 10vw, 3.2rem); }
+
       .rooms-grid,
       .detail,
       .detail-price,
@@ -439,12 +446,19 @@
         grid-template-columns: 1fr;
       }
 
+      .gallery-main img { min-height: 240px; }
       .gallery-side {
         grid-template-rows: unset;
         grid-template-columns: 1fr 1fr;
       }
+      .gallery-side img { min-height: 140px; }
 
+      .detail-body { padding: 22px; }
+      .detail-body h3 { font-size: 1.3rem; }
+
+      .room-body { padding: 16px; }
       .section-head { grid-template-columns: 1fr; }
+      .cta-box { padding: 24px; }
     }
   
     .hamburger {
