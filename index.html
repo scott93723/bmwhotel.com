@@ -602,7 +602,7 @@
       }
 
       .btn { padding: 10px 16px; font-size: 0.85rem; }
-      .hamburger { width: 40px; height: 40px; font-size: 1.2rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: #fff; border-radius: 10px; }
+      .hamburger { width: 40px; height: 40px; font-size: 1.2rem; background: linear-gradient(135deg, rgba(0,150,255,0.15), rgba(0,80,200,0.1)); border: 1px solid rgba(0,150,255,0.4); color: #fff; border-radius: 10px; box-shadow: 0 0 10px rgba(0,150,255,0.3); text-shadow: 0 0 8px rgba(0,180,255,0.8); }
 
       .brand-badge { width: 40px; height: 40px; }
       .brand-title { font-size: 0.88rem; }
@@ -657,10 +657,27 @@
     }
   
     .hamburger {
-      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.15); color: #fff;
+      background: linear-gradient(135deg, rgba(0,150,255,0.15), rgba(0,80,200,0.1));
+      border: 1px solid rgba(0,150,255,0.4);
+      color: #fff;
       font-size: 1.5rem; width: 48px; height: 48px; border-radius: 14px; cursor: pointer;
-      display: grid; place-items: center; backdrop-filter: blur(8px);
+      display: grid; place-items: center;
+      backdrop-filter: blur(8px);
       -webkit-appearance: none; appearance: none;
+      box-shadow: 0 0 12px rgba(0,150,255,0.3), inset 0 0 8px rgba(0,150,255,0.1);
+      text-shadow: 0 0 8px rgba(0,180,255,0.8), 0 0 20px rgba(0,120,255,0.4);
+      animation: hamburgerGlow 2s ease-in-out infinite;
+      transition: all 0.3s ease;
+    }
+    .hamburger:hover {
+      box-shadow: 0 0 24px rgba(0,180,255,0.6), 0 0 48px rgba(0,120,255,0.3), inset 0 0 12px rgba(0,150,255,0.15);
+      border-color: rgba(0,180,255,0.7);
+      transform: scale(1.08);
+      text-shadow: 0 0 12px rgba(0,200,255,1), 0 0 30px rgba(0,150,255,0.6);
+    }
+    @keyframes hamburgerGlow {
+      0%, 100% { box-shadow: 0 0 12px rgba(0,150,255,0.3), inset 0 0 8px rgba(0,150,255,0.1); }
+      50% { box-shadow: 0 0 20px rgba(0,180,255,0.5), 0 0 40px rgba(0,120,255,0.2), inset 0 0 12px rgba(0,150,255,0.15); }
     }
     .nav-overlay {
       display: none; position: fixed; inset: 0; z-index: 200;
