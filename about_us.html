@@ -5,6 +5,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>關於我們｜日月潭香林田莊</title>
+  <meta name="description" content="認識日月潭香林田莊：BMW M Power 風格民宿的故事、空間與經營理念。">
+
+  <link rel="canonical" href="https://bmwhotel.com/about_us.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="香林田莊 BMW M Power 民宿">
+  <meta property="og:title" content="關於我們｜日月潭香林田莊">
+  <meta property="og:description" content="認識日月潭香林田莊：BMW M Power 風格民宿的故事、空間與經營理念。">
+  <meta property="og:url" content="https://bmwhotel.com/about_us.html">
+  <meta property="og:image" content="https://bmwhotel.com/images/about11.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -48,9 +60,9 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
-  <header class="site-header"><div class="container nav"><a class="brand" href="index.html"><div class="brand-badge"><span class="brand-mark">M3</span></div><div><div class="brand-title">日月潭香林田莊</div><div class="brand-sub">BMW M3 Power Style Homestay</div></div></a><nav class="nav-links"><button class="hamburger" onclick="document.getElementById('navMenu').classList.toggle('open');">☰</button><a class="btn btn-primary" href="tel:0905595617">立即訂房</a></nav></div></header>
+  <header class="site-header"><div class="container nav"><a class="brand" href="index.html"><div class="brand-badge"><span class="brand-mark">M3</span></div><div><div class="brand-title">日月潭香林田莊</div><div class="brand-sub">BMW M3 Power Style Homestay</div></div></a><nav class="nav-links"><button class="hamburger" aria-label="開啟主選單" aria-expanded="false" aria-controls="navMenu" type="button">☰</button><a class="btn btn-primary" href="tel:0905595617">立即訂房</a></nav></div></header>
 <div class="nav-overlay" id="navMenu">
-  <button class="nav-close" onclick="document.getElementById('navMenu').classList.remove('open');">✕</button>
+  <button class="nav-close" aria-label="關閉主選單" type="button">✕</button>
   <a href="index.html">首頁</a>
   <a href="about_us.html">關於我們</a>
   <a href="news.html">最新消息</a>
@@ -76,5 +88,28 @@
   </main>
   <footer class="site-footer"><div class="container"><p>© 2018–2026 日月潭香林田莊 · 民宿電話：049-286-1855</p><p>手機：0905-595-617 陳小姐 ｜ 手機：0910-232-380 陳先生（包場、車聚、露營）</p><p><a href="https://www.google.com/maps/place/%E9%A6%99%E6%9E%97%E7%94%B0%E8%8E%8A%E6%B0%91%E5%AE%BF/@23.8354373,120.8998759,18.16z/data=!4m5!3m4!1s0x0:0x8d3e4e169d31cfa7!8m2!3d23.8352299!4d120.8998589">地址：台灣南投縣魚池鄉頭社村平和巷129之19號</a></p><p>本網站由 <a href="https://scott93723.github.io/Knowledge-Enterprise-Co-Ltd.com/">弘道實業有限公司</a> 維護製作</p></div></footer>
   <script>(function(){document.querySelectorAll('.dropdown-wrap>a').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();a.parentElement.classList.toggle('open')}));const items=document.querySelectorAll('#pageCarousel .carousel-item');const dots=document.getElementById('pageDots');let current=0,timer;if(items.length){items.forEach((_,i)=>{const dot=document.createElement('button');dot.className='carousel-dot'+(i===0?' active':'');dot.onclick=()=>goTo(i);dots.appendChild(dot)});function goTo(n){items[current].classList.remove('active');dots.children[current].classList.remove('active');current=(n+items.length)%items.length;items[current].classList.add('active');dots.children[current].classList.add('active');resetTimer()}window.slideCarousel=dir=>goTo(current+dir);function resetTimer(){clearInterval(timer);timer=setInterval(()=>goTo(current+1),4000)}resetTimer()}})();</script>
+
+<script data-nav-wired="1">
+(function(){
+  var btn = document.querySelector(".hamburger");
+  var menu = document.getElementById("navMenu");
+  if (!btn || !menu) return;
+  var closeBtn = menu.querySelector(".nav-close");
+  function setOpen(open){
+    menu.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    if (open && closeBtn) closeBtn.focus();
+    else btn.focus();
+  }
+  btn.addEventListener("click", function(){ setOpen(!menu.classList.contains("open")); });
+  if (closeBtn) closeBtn.addEventListener("click", function(){ setOpen(false); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape" && menu.classList.contains("open")) setOpen(false);
+  });
+  menu.addEventListener("click", function(e){
+    if (e.target === menu) setOpen(false);
+  });
+})();
+</script>
 </body>
 </html>

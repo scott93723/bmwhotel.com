@@ -5,6 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>房型介紹｜BMW M3 Power 風格民宿</title>
+  <link rel="canonical" href="https://bmwhotel.com/house.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:site_name" content="香林田莊 BMW M Power 民宿">
+  <meta property="og:title" content="房型介紹｜BMW M3 Power 風格民宿">
+  <meta property="og:description" content="日月潭香林田莊房型介紹，包含 M1、M3、M5、M6 等主題房型，可查看設備、床型與住宿亮點。">
+  <meta property="og:url" content="https://bmwhotel.com/house.html">
+  <meta property="og:image" content="https://bmwhotel.com/images/m1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
   <meta name="description" content="日月潭香林田莊房型介紹，提供 M1、M3、M5 等主題房型，可查看房內設備、床型配置、住宿亮點與價格資訊。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -497,11 +507,11 @@
         </div>
       </a>
 
-      <nav class="nav-links"><button class="hamburger" onclick="document.getElementById('navMenu').classList.toggle('open');">☰</button><a class="btn btn-primary" href="tel:0905595617">立即訂房</a></nav>
+      <nav class="nav-links"><button class="hamburger" aria-label="開啟主選單" aria-expanded="false" aria-controls="navMenu" type="button">☰</button><a class="btn btn-primary" href="tel:0905595617">立即訂房</a></nav>
     </div>
   </header>
 <div class="nav-overlay" id="navMenu">
-  <button class="nav-close" onclick="document.getElementById('navMenu').classList.remove('open');">✕</button>
+  <button class="nav-close" aria-label="關閉主選單" type="button">✕</button>
   <a href="index.html">首頁</a>
   <a href="about_us.html">關於我們</a>
   <a href="news.html">最新消息</a>
@@ -782,5 +792,28 @@
       © 2018–2026 日月潭香林田莊 · 本網站由 <a href="https://scott93723.github.io/Knowledge-Enterprise-Co-Ltd.com/">弘道實業有限公司</a> 維護製作
     </div>
   </footer>
+
+<script data-nav-wired="1">
+(function(){
+  var btn = document.querySelector(".hamburger");
+  var menu = document.getElementById("navMenu");
+  if (!btn || !menu) return;
+  var closeBtn = menu.querySelector(".nav-close");
+  function setOpen(open){
+    menu.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    if (open && closeBtn) closeBtn.focus();
+    else btn.focus();
+  }
+  btn.addEventListener("click", function(){ setOpen(!menu.classList.contains("open")); });
+  if (closeBtn) closeBtn.addEventListener("click", function(){ setOpen(false); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape" && menu.classList.contains("open")) setOpen(false);
+  });
+  menu.addEventListener("click", function(e){
+    if (e.target === menu) setOpen(false);
+  });
+})();
+</script>
 </body>
 </html>

@@ -779,11 +779,11 @@
         </div>
       </a>
 
-      <nav class="nav-links"><button class="hamburger" onclick="document.getElementById('navMenu').classList.toggle('open');">☰</button><a class="btn btn-primary" href="tel:0905595617">立即訂房</a></nav>
+      <nav class="nav-links"><button class="hamburger" aria-label="開啟主選單" aria-expanded="false" aria-controls="navMenu" type="button">☰</button><a class="btn btn-primary" href="tel:0905595617">立即訂房</a></nav>
     </div>
   </header>
 <div class="nav-overlay" id="navMenu">
-  <button class="nav-close" onclick="document.getElementById('navMenu').classList.remove('open');">✕</button>
+  <button class="nav-close" aria-label="關閉主選單" type="button">✕</button>
   <a href="index.html">首頁</a>
   <a href="about_us.html">關於我們</a>
   <a href="news.html">最新消息</a>
@@ -1143,5 +1143,28 @@
         });
     })();
   </script>
+
+<script data-nav-wired="1">
+(function(){
+  var btn = document.querySelector(".hamburger");
+  var menu = document.getElementById("navMenu");
+  if (!btn || !menu) return;
+  var closeBtn = menu.querySelector(".nav-close");
+  function setOpen(open){
+    menu.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    if (open && closeBtn) closeBtn.focus();
+    else btn.focus();
+  }
+  btn.addEventListener("click", function(){ setOpen(!menu.classList.contains("open")); });
+  if (closeBtn) closeBtn.addEventListener("click", function(){ setOpen(false); });
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape" && menu.classList.contains("open")) setOpen(false);
+  });
+  menu.addEventListener("click", function(e){
+    if (e.target === menu) setOpen(false);
+  });
+})();
+</script>
 </body>
 </html>
