@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <style>
+  <style>.skip-link{position:absolute;left:-9999px;top:0;background:#000;color:#fff;padding:10px 16px;border-radius:0 0 10px 0;font-size:.95rem;z-index:9999}.skip-link:focus{left:0}
     :root{--bg:#08090d;--panel:rgba(255,255,255,.05);--line:rgba(255,255,255,.1);--text:#f4f7fb;--muted:#9ca6b5;--m-blue:#58c4ff;--m-navy:#2753ff;--m-red:#ff375f;--shadow:0 24px 70px rgba(0,0,0,.36);--radius-xl:30px;--radius-lg:22px;--container:1220px}
     *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:"Inter","Noto Sans TC",sans-serif;color:var(--text);background:radial-gradient(circle at top right,rgba(88,196,255,.08),transparent 24%),radial-gradient(circle at 15% 20%,rgba(255,55,95,.08),transparent 20%),linear-gradient(180deg,#05060a 0%,#090b12 45%,#0d1118 100%);line-height:1.7}
     a{color:inherit;text-decoration:none} img{display:block;width:100%}.container{width:min(calc(100% - 32px),var(--container));margin:0 auto}
@@ -58,8 +58,11 @@
     }
   </style>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="format-detection" content="telephone=no">
 </head>
 <body>
+<a class="skip-link" href="#main-content">略過導覽，直接看內容</a>
   <header class="site-header"><div class="container nav"><a class="brand" href="index.html"><div class="brand-badge"><span class="brand-mark">M3</span></div><div><div class="brand-title">日月潭香林田莊</div><div class="brand-sub">BMW M3 Power Style Homestay</div></div></a><nav class="nav-links"><button class="hamburger" aria-label="開啟主選單" aria-expanded="false" aria-controls="navMenu" type="button">☰</button><a class="btn btn-primary" href="tel:0905595617">立即訂房</a></nav></div></header>
 <div class="nav-overlay" id="navMenu">
   <button class="nav-close" aria-label="關閉主選單" type="button">✕</button>
@@ -81,7 +84,7 @@
   <hr>
   <a href="https://www.google.com/maps/place/%E9%A6%99%E6%9E%97%E7%94%B0%E8%8E%8A%E6%B0%91%E5%AE%BF/@23.8354373,120.8998759,18.16z/data=!4m5!3m4!1s0x0:0x8d3e4e169d31cfa7!8m2!3d23.8352299!4d120.8998589">馬上導航</a>
 </div>
-  <main>
+  <main id="main-content">
     <section style="padding:24px 0 0;"><div class="container"><div class="carousel" id="pageCarousel"><div class="carousel-inner"><div class="carousel-item active"><img src="images/about11.jpg" alt="關於我們" width="1620" height="1080" decoding="async" fetchpriority="high"></div><div class="carousel-item"><img src="images/about16.jpg" alt="關於我們" width="1620" height="1080" decoding="async" loading="lazy"></div><div class="carousel-item"><img src="images/about13.jpg" alt="關於我們" width="1620" height="1080" decoding="async" loading="lazy"></div></div><button class="carousel-arrow prev" onclick="slideCarousel(-1)">&#8249;</button><button class="carousel-arrow next" onclick="slideCarousel(1)">&#8250;</button><div class="carousel-controls" id="pageDots"></div></div></div></section>
     <section class="hero"><div class="container"><div class="hero-box panel"><div class="eyebrow">About Us</div><h1>關於我們</h1><p>BMW M Power 鄉村汽車工業風特色民宿。</p></div></div></section>
     <section class="section"><div class="container"><div class="panel"><div class="panel-body"><h2 class="content-title">ShTang-Lin Tien-chuang</h2><p><strong style="color:#fff;">BMW M Power 鄉村汽車工業風特色民宿</strong></p><p>香林田莊，合法民宿，座落於南投縣日月潭國家公園，台21線環湖道路邊，位於頭社村在地人自地自建的全新民宿，提供室內挑高格局寬敞明亮，裝潢高雅，別緻的套房，大廳以M鄉村汽車工業風擺飾，套房房型以M1,M2,M3,M5,M6.命名房型。</p><p>大廳有明亮的景觀，窗戶融入窗外綠地田原還有小河流水，也有整排落雨松，幽靜的環境，豐富的生態資源，帶來不ㄧ樣的鄉村寧靜感受，完全釋放旅人內心的沈重壓力與煩憂，在都市沒有的新鮮空氣，晚上可欣賞滿天星斗，蟲鳴鳥叫，來去田莊親子遊，擁有一夜好眠。</p><p class="note">新露營烤肉區整備中....Comming Soon...敬請期待！</p></div></div></div></section>
